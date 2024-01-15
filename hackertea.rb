@@ -5,11 +5,11 @@
 class Hackertea < Formula
   desc ""
   homepage "https://github.com/KarolosLykos/hackertea"
-  version "0.0.9"
+  version "0.0.10"
 
   on_macos do
-    url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.9/hackertea_0.0.9_darwin_all.tar.gz"
-    sha256 "8cc9ac2984541d8c6b22a4fda0352c50e5da077a8a123bf1824def736c82a174"
+    url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.10/hackertea_0.0.10_darwin_all.tar.gz"
+    sha256 "846cfd60e112634efa4555b63f1fa39288a0dbd63ff7e60f3c148ba76a856a2a"
 
     def install
       bin.install "hackertea"
@@ -17,25 +17,25 @@ class Hackertea < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.10/hackertea_0.0.10_linux_armv6.tar.gz"
+      sha256 "57f145758bdb90e8eab8ec4b6c5d32efa0f51a009b77d5a580d9918974d5b1ee"
+
+      def install
+        bin.install "hackertea"
+      end
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.9/hackertea_0.0.9_linux_arm64.tar.gz"
-      sha256 "5c2bb44cb0caaad39ad51451b19889d9aba43d058876d1d7f13ba92ed7ddd7fb"
+      url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.10/hackertea_0.0.10_linux_arm64.tar.gz"
+      sha256 "a31e5a19ba790b0acf6a9c6ef5dd1fb4bada2359bb04565bbf48b0889c177ebc"
 
       def install
         bin.install "hackertea"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.9/hackertea_0.0.9_linux_amd64.tar.gz"
-      sha256 "8f81684e182458740573cf1077fc24d52f0d660255773a3ad3cc24b8c6b75c2f"
-
-      def install
-        bin.install "hackertea"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.9/hackertea_0.0.9_linux_armv6.tar.gz"
-      sha256 "6e9a01bb642c5f8f5016d150af21e2eabaf248de7b97b05c6127880f463629a5"
+      url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.10/hackertea_0.0.10_linux_amd64.tar.gz"
+      sha256 "7f9aeba0060eac590379dc50861e3ba4dfdcf274b22b586b783f988f79202116"
 
       def install
         bin.install "hackertea"
