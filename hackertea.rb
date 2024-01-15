@@ -5,11 +5,11 @@
 class Hackertea < Formula
   desc ""
   homepage "https://github.com/KarolosLykos/hackertea"
-  version "0.0.8"
+  version "0.0.9"
 
   on_macos do
-    url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.8/hackertea_0.0.8_darwin_all.tar.gz"
-    sha256 "e73965541f76eb0ed9c0c6505a86c8783b71096d35f68ded1e861cd369295220"
+    url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.9/hackertea_0.0.9_darwin_all.tar.gz"
+    sha256 "8cc9ac2984541d8c6b22a4fda0352c50e5da077a8a123bf1824def736c82a174"
 
     def install
       bin.install "hackertea"
@@ -17,25 +17,25 @@ class Hackertea < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.8/hackertea_0.0.8_linux_armv6.tar.gz"
-      sha256 "e4b7f8fff852d5e3e9f3a7aaf22fcb9910d19f399995eca92e27f37886c10d9a"
-
-      def install
-        bin.install "hackertea"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.8/hackertea_0.0.8_linux_arm64.tar.gz"
-      sha256 "f8360215d4e3b82efea9d9ef9af3653bf6f5e77810edaa39dca4133446fe1a72"
+      url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.9/hackertea_0.0.9_linux_arm64.tar.gz"
+      sha256 "5c2bb44cb0caaad39ad51451b19889d9aba43d058876d1d7f13ba92ed7ddd7fb"
 
       def install
         bin.install "hackertea"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.8/hackertea_0.0.8_linux_amd64.tar.gz"
-      sha256 "33d2f073b128d98263e58af835cc1646b289e433642a014b499aa491e594ed2d"
+      url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.9/hackertea_0.0.9_linux_amd64.tar.gz"
+      sha256 "8f81684e182458740573cf1077fc24d52f0d660255773a3ad3cc24b8c6b75c2f"
+
+      def install
+        bin.install "hackertea"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/KarolosLykos/hackertea/releases/download/v0.0.9/hackertea_0.0.9_linux_armv6.tar.gz"
+      sha256 "6e9a01bb642c5f8f5016d150af21e2eabaf248de7b97b05c6127880f463629a5"
 
       def install
         bin.install "hackertea"
